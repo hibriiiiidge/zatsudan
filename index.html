@@ -27,19 +27,36 @@
 <body>
   <div class="container2">
     <div class="title">
-      Let's 雑談 about Engineering!
+      雑談テーマ
     </div>
     <div class="container">
-      <div class="text-display" id="textDisplay">ここにテーマが表示されるよ</div>
+      <div class="text-display" id="textDisplay">
+        ここにテーマが表示されるよ
+        <br>
+        Edit ボタンでテーマを編集できるよ
+      </div>
     </div>
     <div class="container3">
       <button id="startBtn">Start</button>
       <button id="stopBtn">Stop</button>
     </div>
+    <div class="container5">
+      <button id="editBtn">Edit</button>
+    </div>
     <div class="container4">
       <a href="https://twitter.com/share?url=https://hibriiiiidge-zatsudan.vercel.app/&text=エンジニア同士での雑談ネタを提供します〜" target="_blank">
         <img src="images/tw.png" alt="Twitter Share Icon" width="50">
       </a>
+    </div>
+  </div>
+  <!-- モーダルの修正部分 -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>ランダムされるテーマ一覧</h3>
+      <textarea id="textArea" rows="20" cols="50"></textarea>
+      <br>
+      <button id="saveBtn">Save</button>
     </div>
   </div>
   <script src="script.js"></script>
