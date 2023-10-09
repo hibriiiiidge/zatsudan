@@ -31,5 +31,5 @@ startBtn.addEventListener('click', () => {
 });
 
 stopBtn.addEventListener('click', () => {
-    clearInterval(interval);
+  clearInterval(interval);
 });
