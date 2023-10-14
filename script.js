@@ -1,6 +1,12 @@
 const textDisplay = document.getElementById('textDisplay');
 const startBtn = document.getElementById('startBtn');
 const stopBtn = document.getElementById('stopBtn');
+const modal = document.getElementById('myModal');
+const btn = document.getElementById("editBtn");
+const span = document.getElementsByClassName("close")[0];
+const textArea = document.getElementById("textArea");
+const saveBtn = document.getElementById("saveBtn");
+const clearBtn = document.getElementById('clearBtn');
 
 let interval;
 
@@ -50,34 +56,10 @@ stopBtn.addEventListener('click', () => {
   clearInterval(interval);
 });
 
-/////////////////////////////////////////
 
-const textDisplayPerson = document.getElementById('textDisplayPerson');
-const startBtnPerson = document.getElementById('startBtnPerson');
-const stopBtnPerson = document.getElementById('stopBtnPerson');
-
-let intervalPerson;
-
-startBtnPerson.addEventListener('click', () => {
-  clearInterval(intervalPerson);
-  intervalPerson = setInterval(() => {
-    const storedTexts = localStorage.getItem('people');
-    const textsFromLocalStorage = JSON.parse(storedTexts);
-    const randomText = textsFromLocalStorage[Math.floor(Math.random() * textsFromLocalStorage.length)];
-    textDisplayPerson.textContent = randomText;
-  }, 10);
+clearBtn.addEventListener('click', () => {
+  textArea.value = '';
 });
-
-stopBtnPerson.addEventListener('click', () => {
-  clearInterval(intervalPerson);
-});
-
-
-const modal = document.getElementById('myModal');
-const btn = document.getElementById("editBtn");
-const span = document.getElementsByClassName("close")[0];
-const textArea = document.getElementById("textArea");
-const saveBtn = document.getElementById("saveBtn");
 
 btn.onclick = function() {
   modal.style.display = "block";
@@ -113,11 +95,33 @@ window.onclick = function(event) {
   }
 }
 
+/////////////////////////////////////////
+
+const textDisplayPerson = document.getElementById('textDisplayPerson');
+const startBtnPerson = document.getElementById('startBtnPerson');
+const stopBtnPerson = document.getElementById('stopBtnPerson');
 const modalPerson = document.getElementById('myModalPerson');
 const btnPerson = document.getElementById("editBtnPerson");
 const spanPerson = document.getElementsByClassName("closePerson")[0];
 const textAreaPerson = document.getElementById("textAreaPerson");
 const saveBtnPerson = document.getElementById("saveBtnPerson");
+const clearBtnPerson = document.getElementById('clearBtnPerson');
+
+let intervalPerson;
+
+startBtnPerson.addEventListener('click', () => {
+  clearInterval(intervalPerson);
+  intervalPerson = setInterval(() => {
+    const storedTexts = localStorage.getItem('people');
+    const textsFromLocalStorage = JSON.parse(storedTexts);
+    const randomText = textsFromLocalStorage[Math.floor(Math.random() * textsFromLocalStorage.length)];
+    textDisplayPerson.textContent = randomText;
+  }, 10);
+});
+
+stopBtnPerson.addEventListener('click', () => {
+  clearInterval(intervalPerson);
+});
 
 btnPerson.onclick = function() {
   modalPerson.style.display = "block";
@@ -163,4 +167,8 @@ toggleSwitch.addEventListener("change", function() {
   } else {
     toggleTextarea.style.display = "none";
   }
+});
+
+clearBtnPerson.addEventListener('click', () => {
+  textAreaPerson.value = '';
 });

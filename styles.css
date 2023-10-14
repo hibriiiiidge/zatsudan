@@ -147,6 +147,10 @@ button:hover {
   background-color: #15738E;
 }
 
+.clearBtn {
+  background-color: #A91414;
+}
+
 .switchText {
   font-size: 18px;
 }
@@ -220,4 +224,8 @@ input[type="checkbox"]:checked ~ #swImg {
     align-items: center;
     justify-content: center;
   }
+}
+
+.modal-btns {
+
 }
