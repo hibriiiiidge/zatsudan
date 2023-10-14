@@ -43,17 +43,19 @@
     <div class="container5">
       <button id="editBtn">編集</button>
     </div>
-    <div class="container-person">
-      <div class="text-display-person" id="textDisplayPerson">
-        誰が話す？
+    <div class="container-person-wrap">
+      <div class="container-person">
+        <div class="text-display-person" id="textDisplayPerson">
+          誰が話す？
+        </div>
       </div>
-    </div>
-    <div class="container3">
-      <button id="startBtnPerson">START</button>
-      <button id="stopBtnPerson">STOP</button>
-    </div>
-    <div class="container5">
-      <button id="editBtnPerson">編集</button>
+      <div class="container3">
+        <button id="startBtnPerson">START</button>
+        <button id="stopBtnPerson">STOP</button>
+      </div>
+      <div class="container5">
+        <button id="editBtnPerson">編集</button>
+      </div>
     </div>
     <div class="container4">
       <a href="https://twitter.com/share?url=https://zatsu-dan.vercel.app/&text=世の中の迷える雑談ニストへ" target="_blank">
@@ -68,7 +70,7 @@
       <h3>ランダムされるテーマ一覧</h3>
       <textarea id="textArea" rows="20" cols="50"></textarea>
       <br>
-      <button id="saveBtn">保存</button>
+      <button id="saveBtn" class="saveBtn">保存</button>
     </div>
   </div>
   <div id="myModalPerson" class="modal">
@@ -77,7 +79,7 @@
       <h3>ランダムされる雑談ニスト</h3>
       <textarea id="textAreaPerson" rows="5" cols="50"></textarea>
       <br>
-      <button id="saveBtnPerson">保存</button>
+      <button id="saveBtnPerson" class="saveBtn">保存</button>
     </div>
   </div>
   <script src="script.js"></script>

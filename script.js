@@ -28,7 +28,9 @@ window.onload = () => {
 
   const people = [
     'フリーレン',
-    'ヒンメル'
+    'ヒンメル',
+    'ハイター',
+    'アイゼン'
   ];
   // JSON形式の文字列としてlocalStorageに保存
   localStorage.setItem('people', JSON.stringify(people));
