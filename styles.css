@@ -125,7 +125,7 @@ button:disabled {
   cursor: pointer;
 }
 
-#textArea {
+#textArea, #textAreaPerson {
   width: 90%;
   border-radius: 8px;
   padding: 5px;
