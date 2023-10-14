@@ -152,3 +152,15 @@ window.onclick = function(event) {
     modalPerson.style.display = "none";
   }
 }
+
+
+const toggleSwitch = document.getElementById("switch1");
+const toggleTextarea = document.getElementsByClassName("container-person-wrap")[0];
+
+toggleSwitch.addEventListener("change", function() {
+  if (this.checked) {
+    toggleTextarea.style.display = "block";
+  } else {
+    toggleTextarea.style.display = "none";
+  }
+});
