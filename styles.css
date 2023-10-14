@@ -19,12 +19,23 @@ body {
 .container {
   text-align: center;
   background-color: #fff;
-  padding: 20px;
+  padding: 10px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   max-width: 600px;
   margin: auto;
   height: 150px;
+}
+
+.container-person {
+  text-align: center;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 200px;
+  margin: auto;
+  margin-top: 20px;
 }
 
 .container2 {
@@ -73,8 +84,8 @@ button:disabled {
   cursor: not-allowed;
 }
 
-#editBtn {
-  background-color: #2ce42c;
+#editBtn, #editBtnPerson {
+  background-color: #63D361;
 }
 
 .modal {
@@ -115,5 +126,7 @@ button:disabled {
 }
 
 #textArea {
-  width: 100%;
+  width: 90%;
+  border-radius: 8px;
+  padding: 5px;
 }

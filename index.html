@@ -6,7 +6,7 @@
   <title>きょう何話す？</title>
     <!-- SEO Basic Meta Tags -->
   <meta name="description" content="エンジニア同士で雑談するためのネタを提供するサービスですが、テーマは編集できるのでもはやエンジニア関係ないです">
-  <meta name="keywords" content="雑談, エンジニア, エンジニア雑談">
+  <meta name="keywords" content="雑談, エンジニア, エンジニア雑談, 雑談サービス, 雑談アプリ">
   <link rel="canonical" href="https://zatsu-dan.vercel.app/">
 
   <!-- Social Media & Open Graph Tags (for better sharing on platforms like Facebook) -->
@@ -37,11 +37,23 @@
       </div>
     </div>
     <div class="container3">
-      <button id="startBtn">始</button>
-      <button id="stopBtn">止</button>
+      <button id="startBtn">START</button>
+      <button id="stopBtn">STOP</button>
     </div>
     <div class="container5">
       <button id="editBtn">編集</button>
+    </div>
+    <div class="container-person">
+      <div class="text-display-person" id="textDisplayPerson">
+        誰が話す？
+      </div>
+    </div>
+    <div class="container3">
+      <button id="startBtnPerson">START</button>
+      <button id="stopBtnPerson">STOP</button>
+    </div>
+    <div class="container5">
+      <button id="editBtnPerson">編集</button>
     </div>
     <div class="container4">
       <a href="https://twitter.com/share?url=https://zatsu-dan.vercel.app/&text=世の中の迷える雑談ニストへ" target="_blank">
@@ -57,6 +69,15 @@
       <textarea id="textArea" rows="20" cols="50"></textarea>
       <br>
       <button id="saveBtn">保存</button>
+    </div>
+  </div>
+  <div id="myModalPerson" class="modal">
+    <div class="modal-content">
+      <span class="closePerson close">&times;</span>
+      <h3>ランダムされる雑談ニスト</h3>
+      <textarea id="textAreaPerson" rows="5" cols="50"></textarea>
+      <br>
+      <button id="saveBtnPerson">保存</button>
     </div>
   </div>
   <script src="script.js"></script>

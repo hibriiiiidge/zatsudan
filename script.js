@@ -4,7 +4,6 @@ const stopBtn = document.getElementById('stopBtn');
 
 let interval;
 
-
 window.onload = () => {
   const texts = [
     '好きなプログラミング言語は？',
@@ -26,6 +25,13 @@ window.onload = () => {
   ];
   // JSON形式の文字列としてlocalStorageに保存
   localStorage.setItem('texts', JSON.stringify(texts));
+
+  const people = [
+    'フリーレン',
+    'ヒンメル'
+  ];
+  // JSON形式の文字列としてlocalStorageに保存
+  localStorage.setItem('people', JSON.stringify(people));
 };
 
 startBtn.addEventListener('click', () => {
@@ -40,6 +46,28 @@ startBtn.addEventListener('click', () => {
 
 stopBtn.addEventListener('click', () => {
   clearInterval(interval);
+});
+
+/////////////////////////////////////////
+
+const textDisplayPerson = document.getElementById('textDisplayPerson');
+const startBtnPerson = document.getElementById('startBtnPerson');
+const stopBtnPerson = document.getElementById('stopBtnPerson');
+
+let intervalPerson;
+
+startBtnPerson.addEventListener('click', () => {
+  clearInterval(intervalPerson);
+  intervalPerson = setInterval(() => {
+    const storedTexts = localStorage.getItem('people');
+    const textsFromLocalStorage = JSON.parse(storedTexts);
+    const randomText = textsFromLocalStorage[Math.floor(Math.random() * textsFromLocalStorage.length)];
+    textDisplayPerson.textContent = randomText;
+  }, 10);
+});
+
+stopBtnPerson.addEventListener('click', () => {
+  clearInterval(intervalPerson);
 });
 
 
@@ -80,5 +108,45 @@ saveBtn.onclick = function() {
 window.onclick = function(event) {
   if (event.target === modal) {
     modal.style.display = "none";
+  }
+}
+
+const modalPerson = document.getElementById('myModalPerson');
+const btnPerson = document.getElementById("editBtnPerson");
+const spanPerson = document.getElementsByClassName("closePerson")[0];
+const textAreaPerson = document.getElementById("textAreaPerson");
+const saveBtnPerson = document.getElementById("saveBtnPerson");
+
+btnPerson.onclick = function() {
+  modalPerson.style.display = "block";
+
+  // localStorageからtextsを取得して、textareaに表示
+  const storedTexts = localStorage.getItem('people');
+  if (storedTexts) {
+    const textsFromLocalStorage = JSON.parse(storedTexts);
+    textAreaPerson.value = textsFromLocalStorage.join('\n');
+  }
+}
+
+spanPerson.onclick = function() {
+  modalPerson.style.display = "none";
+}
+
+saveBtnPerson.onclick = function() {
+  // textareaの内容を取得し、空行や改行コードのみの行を削除
+  const textsToSave = textAreaPerson.value.split('\n').filter(line => line.trim() !== '');
+    // textsToSaveに値が1つも入っていない場合はアラートを表示
+  if (textsToSave.length === 0) {
+    alert('雑談する気ないっしょ？');
+    return;  // 以降の処理を中断
+  }
+  // 修正された内容をlocalStorageに保存
+  localStorage.setItem('people', JSON.stringify(textsToSave));
+  modalPerson.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target === modalPerson) {
+    modalPerson.style.display = "none";
   }
 }
