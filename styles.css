@@ -141,6 +141,7 @@ button:hover {
   width: 90%;
   border-radius: 8px;
   padding: 5px;
+  font-family: 'Kiwi Maru', 'Arial', sans-serif;
 }
 
 .saveBtn {
@@ -227,5 +228,5 @@ input[type="checkbox"]:checked ~ #swImg {
 }
 
 .modal-btns {
-
+  font-family: 'Kiwi Maru', 'Arial', sans-serif;
 }
